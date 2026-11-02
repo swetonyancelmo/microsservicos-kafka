@@ -3,8 +3,9 @@ spring:
     name: produtos
   datasource:
     url: jdbc:postgresql://localhost:5555/icomprasprodutos
-    username: postgres
-    password: postgres
+    # Padrões só para o docker-compose local; em outro ambiente defina as variáveis.
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
